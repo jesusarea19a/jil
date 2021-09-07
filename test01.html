@@ -13,7 +13,7 @@ th,td {
 
 <button type="button" onclick="loadXMLDoc()">Get my Listahan collection</button>
 <br><br>
-<table id="demo"></table>
+<table id="mydemo"></table>
 
 <script>
 function loadXMLDoc() {
@@ -26,6 +26,7 @@ function loadXMLDoc() {
   xmlhttp.open("GET", "xml\JIL_User_List.xml", true);
   xmlhttp.send();
 }
+
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
@@ -38,8 +39,9 @@ function myFunction(xml) {
     x[i].getElementsByTagName("D_passes")[0].childNodes[0].nodeValue +
     "</td></tr>";
   }
-  document.getElementById("demo").innerHTML = table;
+  document.getElementById("mydemo").innerHTML = table;
 }
+
 </script>
 
 </body>
