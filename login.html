@@ -5,6 +5,9 @@
     <link rel="stylesheet" type="text/css" href="css\Login_style.css">    
 </head>    
 <body>    
+    <?php
+        include_once = 'index.php';
+    ?>
     <h2>Jesus Is Lord Library Login Page</h2><br>    
     <div class="login">    
     <form id="login" method="get" >    
@@ -42,32 +45,7 @@
     </form>     
 </div>    
 
-<?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "mainjilbase";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT You_ser, You_pass, You_Fname, You_Lname FROM listjilpass";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "You_ser: " . $row["You_ser"]. " - Name: " . $row["You_Fname"]. " " . $row["You_Lname"]. "<br>";
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-?>
 
 
 <script>
